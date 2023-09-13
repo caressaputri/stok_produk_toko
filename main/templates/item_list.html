@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Item List</title>
+    <title>Daftar Produk</title>
 </head>
 <body>
-    <h1>My Item List</h1>
-    <ul>
-        {% for item in items %}
-            <li>{{ item.name }} - {{ item.amount }} - {{ item.description }}</li>
+    <h1>Daftar Produk</h1>
+    <table border="1">
+        <tr>
+            <th>Gambar</th>
+            <th>Nama</th>
+            <th>Harga</th>
+            <th>Stok</th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td><img src="{{ product.image.url }}" alt="{{ product.name }}" width="100"></td>
+                <td>{{ product.name }}</td>
+                <td>Rp{{ product.price }}</td>
+                <td>{{ product.stock }}</td>
+            </tr>
         {% endfor %}
-    </ul>
+    </table>
 </body>
 </html>
