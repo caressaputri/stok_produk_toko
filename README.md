@@ -48,3 +48,86 @@ TUGAS 4
    d. Setelah memiliki akun dan login, untuk menambah product dan mengubungkan product dengan user, pada models.py di subdirektori main import form django.contrib.auth.models import user dan mendambahkan Class Product kemudian pada views.py membuat fungsi create_product dan mengexportnya ke show_main. 
    e. untuk Django Cookie, pada views.py menggunakan HttpResponseRedirect dengan menerapkan set_cookies untuk menentukan sesi dan create productnya juga.
    f. Apabila log out akan otomatis terhapus tulisannya pada cookies dan sudah otomatis log out dengan sistem Djangonya.
+
+TUGAS 5
+1. **Element Selector:**
+   - **ID Selector (#):** Berfungsi memberikan identitas unik pada suatu elemen, memungkinkan penetapan gaya yang bersifat eksklusif.
+     ```css
+     #header {
+       color: blue;
+     }
+     ```
+
+   - **Class Selector (.):** Membantu dalam pengelompokan elemen dengan atribut yang serupa, memungkinkan penetapan gaya secara kolektif.
+     ```css
+     .btn {
+       background-color: #3498db;
+     }
+     ```
+
+   - **Tag Selector (nama tag):** Menargetkan semua elemen dengan tag tertentu, memberikan kemampuan untuk penyesuaian gaya secara global.
+     ```css
+     p {
+       font-size: 16px;
+     }
+     ```
+
+   - **Universal Selector (*):** Merupakan instruksi untuk seluruh elemen dalam dokumen, berguna dalam menginisialisasi atau mengatur ulang properti-properti tertentu.
+     ```css
+     * {
+       margin: 0;
+       padding: 0;
+     }
+     ```
+
+2. **HTML5 Tags:**
+   - `<header>`: Menetapkan bagian puncak dokumen atau sebagian yang kritis.
+   - `<nav>`: Menetapkan area navigasi atau menu.
+   - `<section>`: Membagi bagian dalam dokumen.
+   - `<article>`: Menetapkan artikel yang dapat berdiri sendiri dalam dokumen.
+   - `<footer>`: Menetapkan bagian bawah dokumen atau sebagian penutup.
+   - `<figure>` dan `<figcaption>`: Digunakan untuk menyisipkan gambar dan keterangan.
+   - `<main>`: Menetapkan isi utama dalam dokumen.
+
+3. **Perbedaan antara Margin dan Padding:**
+   - **Margin:** Menetapkan jarak di luar batas elemen, tidak memiliki warna latar belakang dan tidak bersentuhan dengan elemen tetangga.
+     ```css
+     .box {
+       margin: 10px;
+     }
+     ```
+
+   - **Padding:** Menetapkan ruang di dalam batas elemen, antara batas elemen dan kontennya, memiliki warna latar belakang dan bersentuhan dengan elemen tetangga.
+     ```css
+     .box {
+       padding: 10px;
+     }
+     ```
+
+4. **Perbedaan antara Tailwind dan Bootstrap:**
+   - **Tailwind CSS:**
+     - Mengadopsi paradigma utility-first, memberikan fleksibilitas tinggi untuk menyesuaikan desain secara rinci.
+     - Menawarkan keunggulan dalam hal keringanan karena hanya memuat komponen yang benar-benar diperlukan.
+
+   - **Bootstrap:**
+     - Menyediakan pengalaman "out of the box" dengan komponen dan gaya bawaan yang siap pakai.
+     - Cocok untuk proyek yang membutuhkan desain cepat tanpa perlu menyesuaikan secara mendalam.
+
+   - **Pilihan:**
+     - Pilih Bootstrap jika prioritasnya implementasi cepat dan kebutuhan desain yang sudah terdefinisi.
+     - Pilih Tailwind jika kontrol yang lebih rinci dan desain yang unik menjadi preferensi.
+    
+Implementasi checklist 
+### Kustomisasi Desain:
+
+1. **Halaman Login, Register, dan Tambah Inventori:**
+   - Pilih CSS atau framework (Bootstrap, Tailwind, Bulma).
+   - Sesuaikan warna, font, dan layout.
+   - Tambahkan gambar atau ikon yang relevan.
+   - Animasi atau transisi opsional.
+
+2. **Halaman Daftar Inventori:**
+   - Gunakan Card untuk tata letak informasi.
+   - Berikan warna dan estetika yang menyenangkan.
+   - Pemformatan jelas dan responsif.
+   - Gaya tambahan seperti bayangan atau efek hover opsional.
