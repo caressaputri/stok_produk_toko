@@ -1,44 +1,76 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+<title>Stok Produk Toko</title>
+{% endblock meta %}
+
 {% block content %}
-    <h1>Shopping List Page</h1>
-
-    <h5>Name:</h5>
-    <p>{{name}}</p>
-
-    <h5>Class:</h5>
-    <p>{{class}}</p>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Date Added</th>
-    </tr>
-
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    {% for product in products %}
+<div class="mx-auto p-2">
+    <h1 class="text-center">Stok Produk Toko</h1>
+    <p>Name: {{ name }}</p>
+    <p>Class: PBP {{ class }}</p>
+    <hr>
+</div>
+<div class="mx-auto mb-1 p-2">
+    <h2>Keranjang</h2>
+    <p>Kamu memiliki <strong>{{ item_amt }}</strong> produk di keranjangmu, total <strong>{{ total_amt }}</strong> </p>
+</div>
+<table class="table table-striped">
+    <thead>
         <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.date_added}}</td>
+            <th class="text-center">Name</th>
+            <th class="text-center" colspan="3">Price</th>
+            <th class="text-center">Description</th>
+            <th class="text-center">Amount</th>
+            <th></th>
         </tr>
-    {% endfor %}
+    </thead>
+
+    <tbody>
+        {% for product in inventory %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>
+                    <a href="{% url 'main:add_sub_item' id=product.pk option=1 %}">
+                        <button class="h-25 btn btn-outline-primary">+</button>
+                    </a>
+                </td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.amount }}</td>
+                <td>
+                    <a href="{% url 'main:add_sub_item' id=product.pk option=0 %}">
+                        <button class="btn btn-outline-danger">-</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'main:delete_item' id=product.pk %}">
+                        <button class="btn btn-outline-danger">Delete</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
-<br />
+<br>
 
-<a href="{% url 'main:create_product' %}">
-    <button>
-        Add New Product
-    </button>
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-</a>
+<div class="mx-auto px-2 pb-3" style="display: inline-block;">
+    <a href="{% url 'main:create_product' %}">
+        <button class="btn btn-outline-primary" style="display: inline-block;">
+            Add New Prodcut
+        </button>
+    </a>
+</div>
+
+<div class="mx-auto pb-3" style="display: inline-block;">
+    <a href="{% url 'main:logout' %}">
+        <button class="btn btn-outline-danger" style="display: inline-block;">
+            Logout
+        </button>
+    </a>
+</div>
+
+<h5 class="px-2">Last login: {{ last_login }}</h5>
 
 {% endblock content %}
